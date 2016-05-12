@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>성답교회 청년부</title>
+
+    <!-- Bootstrap Core CSS - Uses Bootswatch Flatly Theme: http://bootswatch.com/flatly/ -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="css/freelancer.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body id="page-top" class="index">
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#page-top" style="color:block">성답교회 청년부</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="hidden">
+                        <a href="#page-top"></a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="#portfolio">Reservation Confirm</a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="#about">Reservation List</a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="intro-text">
+                        <span class="name">Q2 Photo</span>
+                        <hr class="star-light">
+                    <div class="row">
+                        <div class="col-sm-4 portfolio-item">
+                                <div class="caption">
+                                    <div class="caption-content">
+                                        <i class="fa fa-search-plus fa-3x"></i>
+                                    </div>
+                                </div>
+                                <img src="assets/img/1.jpg" class="img-responsive" alt="">
+                            </a>
+                        </div>
+                        <div class="col-sm-4 portfolio-item">
+                                <div class="caption">
+                                    <div class="caption-content">
+                                        <i class="fa fa-search-plus fa-3x"></i>
+                                    </div>
+                                </div>
+                                <img src="assets/img/2.jpg" class="img-responsive" alt="">
+                            </a>
+                        </div>
+                        <div class="col-sm-4 portfolio-item">
+                                <div class="caption">
+                                    <div class="caption-content">
+                                        <i class="fa fa-search-plus fa-3x"></i>
+                                    </div>
+                                </div>
+                                <img src="assets/img/3.jpg" class="img-responsive" alt="">
+                            </a>
+                        </div>
+                        <div class="col-sm-4 portfolio-item">
+                                <div class="caption">
+                                    <div class="caption-content">
+                                        <i class="fa fa-search-plus fa-3x"></i>
+                                    </div>
+                                </div>
+                                <img src="assets/img/4.jpg" class="img-responsive" alt="">
+                            </a>
+                        </div>
+                        <div class="col-sm-4 portfolio-item">
+                                <div class="caption">
+                                    <div class="caption-content">
+                                        <i class="fa fa-search-plus fa-3x"></i>
+                                    </div>
+                                </div>
+                                <img src="assets/img/5.jpg" class="img-responsive" alt="">
+                            </a>
+                        </div>
+                        <div class="col-sm-4 portfolio-item">
+                                <div class="caption">
+                                    <div class="caption-content">
+                                        <i class="fa fa-search-plus fa-3x"></i>
+                                    </div>
+                                </div>
+                                <img src="assets/img/6.jpg" class="img-responsive" alt="">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Portfolio Grid Section -->
+    <section id="portfolio">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2>Reservation confirm</h2>
+                    <hr class="star-primary">
+                </div>
+            </div>
+                <h3><%= link_to 'New Reservation', new_meeting_path %></h3>
+                <hr>
+                <h4>&nbsp;<%= month_calendar events: @meetings do |date, meetings| %></h4>
+                  <%= date %>
+                
+                  <% meetings.each do |meeting| %>
+                    <div>
+                      <%= meeting.name %>
+                    </div>
+                  <% end %>
+                <% end %>
+    </section>
+
+    <!-- About Section -->
+    <section class="success" id="about">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2>Reservation List</h2>
+                    <hr class="star-light">
+                </div>
+            </div>
+            <div class="row">
+                <table align="center">
+                  <thead>
+                    <tr>
+                      <th>Name</th>
+                      <td>&nbsp;&nbsp;</td>
+                      <th>Start time</th>
+                      <th colspan="3"></th>
+                    </tr>
+                  </thead>
+                
+                  <tbody>
+                    <% @meetings.each do |meeting| %>
+                      <tr>
+                        <td><%= meeting.name %></td>
+                        <td>&nbsp;&nbsp;</td>
+                        <td><%= meeting.start_time %></td>
+                        <td>&nbsp;&nbsp;</td>
+                        <td>&nbsp;&nbsp;</td>
+                        <td><%= link_to 'Show', meeting %></td>
+                        <td>&nbsp;&nbsp;</td>
+                        <td>&nbsp;&nbsp;</td>
+                        <td><%= link_to 'Edit', edit_meeting_path(meeting) %></td>
+                        <td>&nbsp;&nbsp;</td>
+                        <td>&nbsp;&nbsp;</td>
+                        <td><%= link_to 'Destroy', meeting, method: :delete, data: { confirm: '삭제 하겠습니까?' } %></td>
+                      </tr>
+                    <% end %>
+                  </tbody>
+                </table>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2>Contact Me</h2>
+                    <hr class="star-primary">
+                </div>
+            </div>
+          <div style="padding: 5px">
+           <center><a href="http://band.us/#!/band/59345742"><img src="assets/img/7.jpg" class="img-circle" style="width: 50px; height: 50px;"></a></center>
+           &nbsp;
+            <center><div class="row">Band : 성답교회 청년부</div></center>
+          </div>
+          <br>
+          <hr>
+        </div>
+    <!-- Footer -->
+    <footer class="text-center">
+        <div class="footer-above">
+            <div class="container">
+                <div class="row">
+                    <div class="footer-col col-md-6">
+                        <h3>Location</h3>
+                        <p>서울시 성동구 용답동 166-1호</p>
+                    </div>
+                    <div class="footer-col col-md-6">
+                        <h3>청년부실</h3>
+                        <p>많이 이용해 주세요♡</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-below">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        Copyright &copy; 성답교회 청년부 이소정 2016
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Scroll to Top Button (Only visible on small and extra-small screen sizes) -->
+    <!-- jQuery -->
+    <script src="/assets//js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="/assets//js/bootstrap.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+    <script src="/assets/js/classie.js"></script>
+    <script src=/assets/"/js/cbpAnimatedHeader.js"></script>
+
+    <!-- Contact Form JavaScript -->
+    <script src="/assets//js/jqBootstrapValidation.js"></script>
+    <script src="/assets//js/contact_me.js"></script>
+
+    <!-- Custom Theme JavaScript -->
+    <script src="/assets//js/freelancer.js"></script>
+
+</body>
+
+</html>

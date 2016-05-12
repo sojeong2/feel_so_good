@@ -1,0 +1,52 @@
+<p id="notice"><%= notice %></p>
+<div style="text-align:center; margin-top: 40px;"><h1>청년부실 Reservation List</h1></div>
+<hr>
+
+<h3><%= link_to 'New Reservation', new_meeting_path %></h3>
+<hr>
+<h4>&nbsp;<%= month_calendar events: @meetings do |date, meetings| %></h4>
+  <%= date %>
+
+  <% meetings.each do |meeting| %>
+    <div>
+      <%= meeting.name %>
+    </div>
+  <% end %>
+<% end %>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <td>&nbsp;&nbsp;</td>
+      <th>Start time</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @meetings.each do |meeting| %>
+      <tr>
+        <td><%= meeting.name %></td>
+        <td>&nbsp;&nbsp;</td>
+        <td><%= meeting.start_time %></td>
+        <td>&nbsp;&nbsp;</td>
+        <td><%= link_to 'Show', meeting %></td>
+        <td>&nbsp;&nbsp;</td>
+        <td><%= link_to 'Edit', edit_meeting_path(meeting) %></td>
+        <td>&nbsp;&nbsp;</td>
+        <td><%= link_to 'Destroy', meeting, method: :delete, data: { confirm: '삭제 하겠습니까?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<hr>
+
+
+<footer>
+	<div class="container">
+		<div class="intro" >
+			ⓒ development 이소정
+		</div>
+	</div>
+</footer>
